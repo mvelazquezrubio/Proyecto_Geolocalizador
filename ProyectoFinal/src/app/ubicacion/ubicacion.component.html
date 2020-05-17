@@ -1,0 +1,34 @@
+<div class="bg-dark">
+<div *ngIf="cargado; else notShow">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="card mb-3 ml-3 mr-3 mt-3" style="width: 45rem;">
+                <div class="row no-gutters">
+                  <div class="col-md-4">
+                    <img class="card-img rounded h-100" src="/assets/ubicacion.png" alt="/assets/ubicacion.jpg">
+                  </div>
+                  <div class="col-md-8">
+                    <h5 class="card-header text-center"><img class="" src="/assets/icono2.png" alt="/assets/ubicacion.png">
+                        Geolocalización</h5>
+                    <div class="card-body">
+                      <ul class="list-group list-group-flush">
+                        <li class="list-group-item"><span><b>Pais:</b> {{info.country_name}}</span></li>
+                        <li class="list-group-item"><span><b>Ciudad:</b> {{info.city}}, {{info.region_name}}</span></li>
+                        <li class="list-group-item"><span><b>Hora:</b> {{Hora}}</span></li>
+                      </ul>
+                      </div> 
+                  </div>
+                </div>
+              </div>
+        </div>
+    </div>
+        <app-clima [lat_lon]="coordenadas"></app-clima>
+</div>
+<ng-template #notShow>
+    <p class="text-white">
+      Obteniendo información...
+    </p>
+</ng-template>
+</div>
+
+

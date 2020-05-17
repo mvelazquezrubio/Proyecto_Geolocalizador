@@ -1,0 +1,91 @@
+<div *ngIf="cargado; else notShow">
+<div class="container">
+    <div class="row justify-content-center">
+
+        <div class="col-12">
+            <div class="row justify-content-center">
+                <div class="row justify-content-center">
+                    <div class="col-12">
+                        <div class="justify-content-center">
+                        <div class="card" style="width: 28rem;">
+                            <div class="card-header text-center">
+                               <b>Pronóstico del clima.</b> 
+                            </div>
+                            <ul class="list-group list-group-flush text-center">
+                            <li class="list-group-item"><b>{{actual.wind10m_max}}</b></li>
+                            <li class="list-group-item"><b>{{actual.date}}</b></li>
+                            <li class="list-group-item">
+                                <div *ngIf="actual.weather=='clear'"><img src="/assets/clear.png" alt="/assets/clear.png"></div>
+                                <div *ngIf="actual.weather=='cloudy'"><img src="/assets/cloudy.png" alt="/assets/cloudy.png"></div>
+                                <div *ngIf="actual.weather=='ishower'"><img src="/assets/ishower.png" alt="/assets/ishower.png"></div>
+                                <div *ngIf="actual.weather=='lightrain'"><img src="/assets/lightrain.png" alt="/assets/lightrain.png"></div>
+                                <div *ngIf="actual.weather=='oshower'"><img src="/assets/oshower.png" alt="/assets/oshower.png"></div>
+                                <div *ngIf="actual.weather=='rain'"><img src="/assets/rain.png" alt="/assets/rain.png"></div>
+                                <div *ngIf="actual.weather=='pcloudy'"><img src="/assets/pcloudy.png" alt="/assets/pcloudy.png"></div>
+                                <div *ngIf="actual.weather=='vcloudy'"><img src="/assets/vcloudy.png" alt="/assets/vcloudy.png"></div>
+                                <div *ngIf="actual.weather=='foggy'"><img src="/assets/foggy.png" alt="/assets/foggy.png"></div>
+                                <div *ngIf="actual.weather=='mixed'"><img src="/assets/mixed.png" alt="/assets/mixed.png"></div>
+                                <div *ngIf="actual.weather=='snow'"><img src="/assets/snow.png" alt="/assets/snow.png"></div>
+                                <div *ngIf="actual.weather=='lightsnow'"><img src="/assets/lightsnow.png" alt="/assets/lightsnow.png"></div>
+                                <div *ngIf="actual.weather=='thunderstorm'"><img src="/assets/thunderstorm.png" alt="/assets/thunderstorm.png"></div>
+                            </li>
+                            <li class="list-group-item">
+                                <img class="" src="/assets/termometro.png" alt="/assets/termometro.png">
+                                <b>Temperatura máxima:</b><br> {{actual.temp2m.max}}
+                            </li>
+                            <li class="list-group-item">
+                                <img class="" src="/assets/termometro.png" alt="/assets/termometro.png">
+                                <b>Temperatura mínima:</b><br> {{actual.temp2m.min}}
+                            </li>
+                            </ul>
+                        </div>
+                    </div> 
+                </div>          
+            </div>
+            </div>
+        </div>
+
+        <div *ngFor="let pronostico of info.dataseries">
+            <div class="col-12 mt-3">
+                <div class="card" style="width: 28rem;">
+                    <div class="card-header text-center">
+                       <b>Pronóstico del clima.</b> 
+                    </div>
+                    <ul class="list-group list-group-flush text-center">
+                    <li class="list-group-item"><b>{{pronostico.wind10m_max}}</b></li>
+                    <li class="list-group-item"><b>{{pronostico.date}}</b></li>
+                    <li class="list-group-item">
+                       <div *ngIf="pronostico.weather=='clear'"><img src="/assets/clear.png" alt="/assets/clear.png"></div>
+                        <div *ngIf="pronostico.weather=='cloudy'"><img src="/assets/cloudy.png" alt="/assets/cloudy.png"></div>
+                        <div *ngIf="pronostico.weather=='ishower'"><img src="/assets/ishower.png" alt="/assets/ishower.png"></div>
+                        <div *ngIf="pronostico.weather=='lightrain'"><img src="/assets/lightrain.png" alt="/assets/lightrain.png"></div>
+                        <div *ngIf="pronostico.weather=='oshower'"><img src="/assets/oshower.png" alt="/assets/oshower.png"></div>
+                        <div *ngIf="pronostico.weather=='rain'"><img src="/assets/rain.png" alt="/assets/rain.png"></div>
+                        <div *ngIf="pronostico.weather=='pcloudy'"><img src="/assets/pcloudy.png" alt="/assets/pcloudy.png"></div>
+                        <div *ngIf="pronostico.weather=='vcloudy'"><img src="/assets/vcloudy.png" alt="/assets/vcloudy.png"></div>
+                        <div *ngIf="pronostico.weather=='foggy'"><img src="/assets/foggy.png" alt="/assets/foggy.png"></div>
+                        <div *ngIf="pronostico.weather=='mixed'"><img src="/assets/mixed.png" alt="/assets/mixed.png"></div>
+                        <div *ngIf="pronostico.weather=='snow'"><img src="/assets/snow.png" alt="/assets/snow.png"></div>
+                        <div *ngIf="pronostico.weather=='lightsnow'"><img src="/assets/lightsnow.png" alt="/assets/lightsnow.png"></div>
+                        <div *ngIf="pronostico.weather=='thunderstorm'"><img src="/assets/thunderstorm.png" alt="/assets/thunderstorm.png"></div>
+                    </li>
+                    <li class="list-group-item">
+                        <img class="" src="/assets/termometro.png" alt="/assets/termometro.png">
+                        <b>Temperatura máxima:</b><br> {{pronostico.temp2m.max}}
+                    </li>
+                    <li class="list-group-item">
+                        <img class="" src="/assets/termometro.png" alt="/assets/termometro.png">
+                        <b>Temperatura mínima:</b><br> {{pronostico.temp2m.min}}
+                    </li>
+                    </ul>
+                </div>
+            </div>           
+        </div>
+    </div>
+</div>
+</div>
+<ng-template #notShow>
+    <p class="text-white">
+      Obteniendo información...
+    </p>
+</ng-template>
