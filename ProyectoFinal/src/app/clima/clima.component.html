@@ -7,9 +7,9 @@
                 <div class="row justify-content-center">
                     <div class="col-12">
                         <div class="justify-content-center">
-                        <div class="card" style="width: 28rem;">
+                        <div class="card bg-info" style="width: 28rem;">
                             <div class="card-header text-center">
-                               <b>Pronóstico del clima.</b> 
+                               <h5><b>Pronóstico del clima.</b></h5> 
                             </div>
                             <ul class="list-group list-group-flush text-center">
                             <li class="list-group-item"><b>{{actual.wind10m_max}}</b></li>
@@ -31,11 +31,11 @@
                             </li>
                             <li class="list-group-item">
                                 <img class="" src="/assets/termometro.png" alt="/assets/termometro.png">
-                                <b>Temperatura máxima:</b><br> {{actual.temp2m.max}}
+                                <b>Temperatura máxima:</b><br> <span class="text-danger"><h4>{{actual.temp2m.max}}°</h4></span>
                             </li>
                             <li class="list-group-item">
                                 <img class="" src="/assets/termometro.png" alt="/assets/termometro.png">
-                                <b>Temperatura mínima:</b><br> {{actual.temp2m.min}}
+                                <b>Temperatura mínima:</b><br> <span class="text-primary"><h4>{{actual.temp2m.min}}°</h4></span>
                             </li>
                             </ul>
                         </div>
@@ -47,9 +47,9 @@
 
         <div *ngFor="let pronostico of info.dataseries">
             <div class="col-12 mt-3">
-                <div class="card" style="width: 28rem;">
+                <div class="card bg-info" style="width: 28rem;">
                     <div class="card-header text-center">
-                       <b>Pronóstico del clima.</b> 
+                        <h5><b>Pronóstico del clima.</b></h5> 
                     </div>
                     <ul class="list-group list-group-flush text-center">
                     <li class="list-group-item"><b>{{pronostico.wind10m_max}}</b></li>
@@ -71,11 +71,11 @@
                     </li>
                     <li class="list-group-item">
                         <img class="" src="/assets/termometro.png" alt="/assets/termometro.png">
-                        <b>Temperatura máxima:</b><br> {{pronostico.temp2m.max}}
+                        <b>Temperatura máxima:</b><br> <span class="text-danger"><h4>{{pronostico.temp2m.max}}°</h4></span>
                     </li>
                     <li class="list-group-item">
                         <img class="" src="/assets/termometro.png" alt="/assets/termometro.png">
-                        <b>Temperatura mínima:</b><br> {{pronostico.temp2m.min}}
+                        <b>Temperatura mínima:</b><br> <span class="text-primary"><h4>{{pronostico.temp2m.min}}°    </h4></span>
                     </li>
                     </ul>
                 </div>
